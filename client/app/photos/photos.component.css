@@ -1,0 +1,106 @@
+a:link {
+    border: none;
+    background-color: transparent;
+    margin: 0px;
+    font-size: 12px;
+}
+
+a:hover {
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+input {
+    border: 1px solid #757575;
+}
+
+.dropdown-item {
+    background-color: #F5F5F5;
+}
+
+img {
+    width: 30px;
+    height: 30;
+    border: none;
+    border-radius: 5px;
+}
+
+textarea {
+    width: 80%;
+    border: none;
+    resize: none;
+}
+
+.modal {
+    margin-top: 10%;
+    background-color: rgba(16, 16, 16, 0.8);
+}
+
+.modal-body {
+    margin: 0px;
+    padding: 0px;
+}
+
+.modal-content {
+    background-color: #E0E0E0;
+}
+
+.post {
+    background-color: #00BFA5;
+    color: #F5F5F5;
+    font-size: 14px;
+}
+
+.modal-title {
+    color: #9E9E9E;
+}
+
+.add-media {
+    border: none;
+    color: #BDBDBD;
+    background-color: #E0E0E0;
+    float: left;
+}
+
+.btn-modal {
+    /*border: none;
+    width: 40%;
+    height: 150px;
+    margin: 100px 0px 100px 0px;
+    background-color: rgba(0, 191, 165, 0.5);
+    color: #F5F5F5;*/
+    padding: 0px;
+    margin: 100px 0px 100px 0px;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.dropdown-toggle {
+    color: #9E9E9E;
+}
+
+.active {
+    margin-bottom: 0px;
+    border-bottom: 4px solid #1DE9B6;
+}
+
+.card-img-bottom {
+    width: 100%;
+    height: 30%;
+    border: none;
+    border-radius: 0px;
+}
+
+.card-footer {
+    background-color: transparent;
+}
+
+.card {
+    margin: 10px 0px 20px 0px;
+}
+
+#navbarLists {
+    margin-bottom: -8px;
+}

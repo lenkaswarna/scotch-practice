@@ -1,0 +1,100 @@
+<my-navbar></my-navbar>
+<div class="container-fluid" style="background-image: url(./assets/beach6.jpg);">
+    <div class="row align-items-center justify-content-center">
+        <!-- Button trigger modal -->
+        <button type="button" class="btn-modal" data-toggle="modal" data-target="#modal">
+                <img src="./assets/md-btn.png" style="height:23%; width:100%;" alt="Button"/>
+            </button>
+        <!-- Modal -->
+        <div class="modal fade" id="modal" tabindex="-1" role="dialog" aria-labelledby="modalTitle" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header" style="border:none;">
+                        <h5 class="modal-title" id="modalTitle">Create new message</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                    </div>
+                    <div class="modal-body">
+                        <form novalidate [formGroup]="newUserPosts">
+                            <div class="row justify-content-center">
+                                <div class="col-11">
+                                    <div class="form-group">
+                                        <div class="input-group">
+                                            <textarea class="form-control" formControlName="text" placeholder="What's on your mind?"></textarea>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-3">
+                                    <button type="button" class="btn add-media">
+                                        <i class="fa fa-camera" aria-hidden="true"></i> Add Photo
+                                    </button>
+                                </div>
+                                <div class="col-3">
+                                    <button type="button" class="btn add-media">
+                                        <i class="fa fa-video-camera" aria-hidden="true"></i> Add Video
+                                    </button>
+                                </div>
+                                <div class="col">
+                                    <button type="submit" class="btn post" (click)="onSubmit(newUserPosts);" data-dismiss="modal">Post</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <nav class="navbar navbar-toggleable-md navbar-light" style="background-color:transparent;">
+            <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarLists" aria-controls="navbarLists" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarLists" style="margin-left:18%;">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" style="color:#F5F5F5;font-size:12px;" routerLink='/' routerLinkActive='active'>ALL POSTS <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" style="color:#F5F5F5;font-size:12px;" routerLink='/photos' routerLinkActive='active'>PHOTOS</a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" style="color:#F5F5F5;font-size:12px;" routerLink='/videos' routerLinkActive='active'>VIDEOS</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+</div>
+<br/>
+<div class="container">
+    <div class="card-columns">
+        <div *ngFor="let userPost of userPosts">
+            <div class="card" *ngIf="userPost.videoUrl[0]">
+                <div class="card-block">
+                    <div class="row">
+                        <div class="col-2">
+                            <img [src]=userPost.profilePic alt="Profile" style="width:40px; height:40px;">
+                        </div>
+                        <div class="col-10">
+                            <div class="card-title">
+                                <span style="font-size:20px;">{{userPost.name}}</span>
+                            </div>
+                            <p class="card-text" style="color:#424242;">{{userPost.videoCaption[0]}}</p>
+                            <p class="card-text"><small class="text-muted">{{userPost.videoUrl[0]}}</small></p>
+                            <!--p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p-->
+                        </div>
+                    </div>
+                </div>
+                <iframe style="width:100%; height:30%;" [src]="userPost.videoUrl[0] | safe:'resourceUrl'" frameborder="0" allowfullscreen></iframe>
+                <div class="card-footer text-muted text-right">
+                    <i class="fa fa-reply" aria-hidden="true" style="margin:10px;"></i>
+                    <i class="fa fa-heart-o" aria-hidden="true" style="margin:10px;"></i> {{userPost.creationTime | relativeTime}}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<my-footer></my-footer>

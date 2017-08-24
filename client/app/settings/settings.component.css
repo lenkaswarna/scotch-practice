@@ -1,0 +1,156 @@
+.profile {
+    height: 80px;
+    width: 80px;
+    border: none;
+    border-radius: 4px;
+    margin-top: 0px;
+}
+
+.changeButton {
+    color: grey;
+    width: 75px;
+    margin-top: 8px;
+}
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+}
+
+.switch input {
+    display: none;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+input:checked+.slider {
+    background-color: #00BFA5;
+}
+
+input:focus+.slider {
+    box-shadow: 0 0 1px #00BFA5;
+}
+
+input:checked+.slider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+}
+
+
+/* Rounded sliders */
+
+.slider.round {
+    border-radius: 34px;
+}
+
+.slider.round:before {
+    border-radius: 50%;
+}
+
+
+/* radio button*/
+
+[type="checkbox"]:checked,
+[type="checkbox"]:not(:checked) {
+    position: absolute;
+    left: -9999px;
+}
+
+[type="checkbox"]:checked+label,
+[type="checkbox"]:not(:checked)+label {
+    position: relative;
+    padding-left: 28px;
+    cursor: pointer;
+    line-height: 20px;
+    display: inline-block;
+    color: #666;
+}
+
+[type="checkbox"]:checked+label:before,
+[type="checkbox"]:not(:checked)+label:before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 26px;
+    height: 26px;
+    border: 1px solid #BDBDBD;
+    border-radius: 100%;
+    background: #fff;
+}
+
+[type="checkbox"]:checked+label:after,
+[type="checkbox"]:not(:checked)+label:after {
+    content: '';
+    width: 20px;
+    height: 20px;
+    background: #00BFA5;
+    position: absolute;
+    top: 3px;
+    left: 3px;
+    border-radius: 100%;
+    -webkit-transition: all 0.2s ease;
+    transition: all 0.2s ease;
+}
+
+[type="checkbox"]:not(:checked)+label:after {
+    opacity: 0;
+    -webkit-transform: scale(0);
+    transform: scale(0);
+}
+
+[type="checkbox"]:checked+label:after {
+    opacity: 1;
+    -webkit-transform: scale(1);
+    transform: scale(1);
+}
+
+.save-button {
+    background-color: #00BFA5;
+    color: #FFFFFF;
+    border: 1px solid #00BFA5;
+}
+
+.form-control-success {
+    color: #00BFA5;
+    border: 1px solid #00BFA5;
+}
+
+.input-icon {
+    position: absolute;
+    left: 3px;
+    top: calc(50% - 0.5em);
+}
+
+input {
+    padding-left: 35px;
+}
+
+.input-wrapper {
+    position: relative;
+}
